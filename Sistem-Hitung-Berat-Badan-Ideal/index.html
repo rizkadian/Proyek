@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Hitung Berat Badan Ideal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #421cc8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #4E1DFF;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        #error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hitung Berat Badan Ideal</h1>
+    <div class="main-user-info">
+        <div class="user-input-box">
+    <label for="gender">Jenis Kelamin:</label>
+    <select id="gender" name="gender">
+        <option value="pilih">Pilih Jenis Kelamin</option>
+        <option value="male">Laki-laki</option>
+        <option value="female">Perempuan</option>
+    </select>
+
+</div>
+</div>
+<div class="main-user-info">
+<div class="user-input-box">
+    <label for="height">Tinggi Badan (cm):</label>
+    <input type="number" id="height" name="height" placeholder="Isi Tinggi Badan" required>
+</div>
+</div>
+<div class="main-user-info">
+<div class="user-input-box">
+    <label for="weight">Berat Badan (kg):</label>
+    <input type="number" id="weight" name="weight"  placeholder="Isi Berat Badan" required>
+</div>
+</div>
+
+
+    <button onclick="calculateBMI()">Hitung</button>
+
+    <div id="result"></div>
+    <div id="error-message"></div>
+
+    <script>
+        function calculateBMI() {
+            const gender = document.getElementById('gender').value;
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+
+            // Validasi input
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                document.getElementById('result').innerText = '';
+                document.getElementById('error-message').innerText = 'Mohon isi tinggi badan dan berat badan dengan benar.';
+                return;
+            } else {
+                document.getElementById('error-message').innerText = '';
+            }
+
+            // Hitung BMI
+            const bmi = weight / Math.pow((height / 100), 2);
+
+            // Tentukan kategori BMI
+            let category;
+            if (bmi < 18.5) {
+                category = 'Kurus';
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                category = 'Normal';
+            } else if (bmi >= 25 && bmi < 29.9) {
+                category = 'Gemuk';
+            } else {
+                category = 'Obesitas';
+            }
+
+            const resultMessage = `BMI: ${bmi.toFixed(2)} - Kategori: ${category}`;
+            document.getElementById('result').innerText = resultMessage;
+        }
+    </script>
+
+</body>
+</html>

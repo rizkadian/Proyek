@@ -1,0 +1,205 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; 
+}
+
+header {
+    position: absolute;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+    padding: 0 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header .logo {
+    color: rgb(83, 83, 83);
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding: 0 1rem;
+    background-color: #f8f6ff;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+    padding-top: 30px;
+}
+
+.containerr{
+    width: 100%;
+    min-height: 70%;
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #d1d1d1;
+	padding: 1rem 1rem;
+    border-radius: 15px;
+    justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+form{
+	width: 100%;
+}
+
+.btn:hover{
+	background-position: right;
+}
+
+.errorr {
+	background: #F2DEDE;
+	color: #A94442;
+	padding: 10px;
+	width: 100%;
+	border-radius: 5px;
+	font-family: 'Poppins';
+	font-size: 10px;
+	margin-bottom: 10px;
+ }
+
+ .berhasil {
+	background: #ffffff;
+	color: #47a942;
+	padding: 10px;
+	width: 100%;
+	border-radius: 5px;
+	font-family: 'Poppins';
+	font-size: 12px;
+ }
+
+.kk {
+    font-size: 30px;
+    content: "";
+    display: block;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.btn{
+	display: block;
+	width: 100%;
+	height: 55px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #4E1DFF, #5f43c5, #3701f7);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #ffffff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: .5s;
+}
+ 
+.main-user-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2px 0; 
+	margin-bottom: 2px;  
+}
+  
+.user-input-box:nth-child(2n){
+    justify-content: end;
+}
+  
+.user-input-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  
+.user-input-box label{
+    width: 100%;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Poppins;
+    text-align: left;
+    padding: 2px;
+}
+  
+.user-input-box input{
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(227, 226, 226);
+    padding: 0 10px; 
+    background-color: #ffffff;
+    padding-bottom: 2px;  
+}
+
+input::placeholder {
+	color: #d1d1d1;
+	font-size: 12px;
+	font-family: Poppins;
+}
+
+.daftar {
+	font-size: 12px;
+	font-family: Poppins;
+}
+
+.daftarhref {
+    color: #4E1DFF;
+    text-decoration: none;
+}
+
+.salahtulis {
+	color: #A94442;
+    font-size: 11px;
+	font-family: Poppins;
+    padding-left: 3px;
+}
+
+input:hover {
+	border: 1px solid #4E1DFF;
+}
+
+.form-submit-btn{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.form-submit-btn input{
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: 0px solid grey;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #cccccc2b;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1000px){
+	.container{
+        grid-template-columns: 1fr;
+    }
+
+    .containerr{
+        max-height: 85%;
+        overflow: auto;
+    }
+}
